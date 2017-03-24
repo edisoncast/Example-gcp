@@ -1,11 +1,6 @@
-provider "google" {
-	credentials = "${file("creds.json")}"
-	project = "terraform-162515"
-	region = "europe-west1"
-}
-
 resource "google_compute_instance" "web" {
-name = "web"
+#name = "web2"
+name         = "${var.enviroment}-web001"
 machine_type = "f1-micro"
 zone = "europe-west1-c"
 
